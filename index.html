@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mubarak & Ruksana - Wedding Celebration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #B8860B;
+            --light-gold: #F5E6D3;
+            --deep-maroon: #4A1D3D;
+            --cream: #FAF6F0;
+            --text-dark: #2C1810;
+            --text-light: #6B4423;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(74, 29, 61, 0.95);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+            font-weight: 900;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--deep-maroon) 0%, #6B2C5F 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 4rem;
+            color: var(--cream);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        .hero .ampersand {
+            color: var(--primary-gold);
+            font-size: 3rem;
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        .wedding-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            margin: 2rem 0;
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--deep-maroon);
+        }
+
+        .couple-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .couple-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.1);
+            border-top: 4px solid var(--primary-gold);
+            text-align: center;
+        }
+
+        .couple-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--deep-maroon);
+            margin: 1rem 0;
+        }
+
+        .couple-card .role {
+            color: var(--primary-gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .events-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .event-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--primary-gold);
+        }
+
+        .event-time {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .venue-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+            align-items: center;
+        }
+
+        .venue-info {
+            background: var(--light-gold);
+            padding: 2.5rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary-gold);
+        }
+
+        .venue-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--deep-maroon);
+            margin-bottom: 1.5rem;
+        }
+
+        .rsvp-section {
+            background: linear-gradient(135deg, var(--deep-maroon) 0%, #6B2C5F 100%);
+            color: var(--cream);
+            text-align: center;
+        }
+
+        .rsvp-section h2 {
+            color: var(--cream);
+        }
+
+        .rsvp-button {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: var(--deep-maroon);
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 2rem;
+            text-decoration: none;
+        }
+
+        .rsvp-button:hover {
+            background: #F5E6D3;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: var(--deep-maroon);
+            color: var(--cream);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .couple-container { grid-template-columns: 1fr; }
+            .venue-container { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">M & R</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#couple">Couple</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#venue">Venue</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Mubarak</h1>
+            <span class="ampersand">&</span>
+            <h1>Ruksana</h1>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem;">Together Forever</p>
+            <div class="wedding-date">
+                20th December 2026 | Sunday
+            </div>
+        </div>
+    </section>
+
+    <section class="couple-section" id="couple">
+        <h2>Our Love Story</h2>
+        <div class="couple-container">
+            <div class="couple-card">
+                <div style="font-size: 3rem; color: var(--primary-gold); margin-bottom: 1rem;">💍</div>
+                <h3>Mubarak</h3>
+                <div class="role">Groom</div>
+                <div style="color: var(--text-light); font-size: 0.95rem; line-height: 1.8;">
+                    <p><strong>Son of</strong></p>
+                    <p>Late Kunjimon & Late Ummukulsu</p>
+                    <p style="margin-top: 1rem;"><strong>From</strong></p>
+                    <p>Veettuvalappil House<br>Andathode</p>
+                    <p style="margin-top: 1rem;"><strong>Contact:</strong></p>
+                    <p><a href="tel:+919961116060" style="color: var(--primary-gold); text-decoration: none;">+91 9961116060</a></p>
+                </div>
+            </div>
+
+            <div class="couple-card">
+                <div style="font-size: 3rem; color: var(--primary-gold); margin-bottom: 1rem;">💍</div>
+                <h3>Ruksana</h3>
+                <div class="role">Bride</div>
+                <div style="color: var(--text-light); font-size: 0.95rem; line-height: 1.8;">
+                    <p><strong>Daughter of</strong></p>
+                    <p>Late Nowshad & Roufath</p>
+                    <p style="margin-top: 1rem;"><strong>From</strong></p>
+                    <p>Tharupeedikayil House<br>Ottupara, Wadakkanchery</p>
+                    <p style="margin-top: 1rem;"><strong>Contact:</strong></p>
+                    <p><a href="mailto:wedding@example.com" style="color: var(--primary-gold); text-decoration: none;">Get in Touch</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule">
+        <h2>Wedding Schedule</h2>
+        <div class="events-container">
+            <div class="event-card">
+                <div class="event-time">8:00 AM</div>
+                <h3>Welcome Drinks</h3>
+                <p>Join us for refreshments as we begin the celebration of our special day.</p>
+            </div>
+            <div class="event-card">
+                <div class="event-time">9:30 AM</div>
+                <h3>Wedding Ceremony</h3>
+                <p>The main ceremony where we will exchange vows and begin our journey together.</p>
+            </div>
+            <div class="event-card">
+                <div class="event-time">11:30 AM</div>
+                <h3>Reception & Feast</h3>
+                <p>Celebrate with us as we share a lavish meal and dance the evening away.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="venue-section" id="venue">
+        <h2>The Venue</h2>
+        <div class="venue-container">
+            <div class="venue-info">
+                <h3>V.P Mamu Community Hall</h3>
+                <p><strong>📍 Location:</strong> V.P Mamu Community Hall</p>
+                <p style="margin-top: 1rem;"><strong>📅 Date:</strong> Sunday, 20th December 2026</p>
+                <p style="margin-top: 1rem;"><strong>⏰ Time:</strong> 8:00 AM onwards</p>
+                <p style="margin-top: 1rem;"><strong>🚗 Parking:</strong> Available. Please arrive 15 mins early.</p>
+            </div>
+            <div style="background: var(--light-gold); padding: 2rem; border-radius: 10px; text-align: center; height: 300px; display: flex; align-items: center; justify-content: center;">
+                <p style="color: var(--text-dark);">📍 Wadakkanchery, Kerala</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="rsvp-section" id="rsvp">
+        <h2>Join Our Celebration</h2>
+        <p style="margin: 2rem 0; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            We would be honored by your presence on our special day. Please confirm your attendance!
+        </p>
+        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;">
+            <div style="background: rgba(212, 175, 55, 0.1); padding: 1.5rem; border-radius: 8px; border: 2px solid var(--primary-gold);">
+                <p><strong>📞 Call</strong></p>
+                <p><a href="tel:+919961116060" style="color: var(--primary-gold); text-decoration: none;">+91 9961116060</a></p>
+            </div>
+            <div style="background: rgba(212, 175, 55, 0.1); padding: 1.5rem; border-radius: 8px; border: 2px solid var(--primary-gold);">
+                <p><strong>💬 WhatsApp</strong></p>
+                <p style="cursor: pointer;">Message us directly</p>
+            </div>
+        </div>
+        <button class="rsvp-button" onclick="rsvpNow()">RSVP NOW</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mubarak & Ruksana Wedding. All rights reserved.</p>
+        <p>Thank you for being part of our celebration! 💕</p>
+    </footer>
+
+    <script>
+        function rsvpNow() {
+            const message = 'Hi! I would like to RSVP for the wedding of Mubarak & Ruksana on 20th December 2026.';
+            const url = `https://wa.me/919961116060?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
